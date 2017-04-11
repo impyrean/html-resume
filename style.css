@@ -79,7 +79,7 @@ li{
 #main{
   float: left;
   width: var(--main-width);
-  padding: 0.25in 0.15in 0 0.15in;
+  padding: 0.25in 0.35in 0 0.35in;
   font-size: 9pt;
 }
 
@@ -102,7 +102,7 @@ li{
 
 #title{
   position: relative;
-  left: 0.70in;
+  left: 0.45in;
   margin-bottom: 0.3in;
   line-height: 1.2;
 }
@@ -200,7 +200,7 @@ li{
   display: block;
 }
 
-.date span:first-child::after{
+.date span:nth-child(even)::before {
   position: relative;
   top: 1pt;
   right: 5.5pt;
@@ -292,27 +292,13 @@ li{
 }
 
 /****** customize list symbol style ******/
-#main li::before{
+#main li::before {
   position: relative;
-  margin-left: -4.25pt;
-  content: '• ';
+  top: -2pt;
+  margin-left: -5pt;
+  font-size: 8px;
+  content: '+ ';  /* • */
 }
-
-.details .concise ul{
-  margin: 0 !important;
-  -webkit-columns: 2;
-  -moz-columns: 2;
-  columns: 2;
-}
-
-.details .concise li{
-  margin: 0 !important;
-}
-
-.details .concise li{
-  margin-left: 0 !important;
-}
-
 
 
 /* sidebar */
