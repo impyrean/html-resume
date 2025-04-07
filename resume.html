@@ -1,475 +1,303 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
   <head>
-    <meta charset="utf-8" />
-    <link rel="stylesheet" type="text/css" href="dep/normalize.css/normalize.css" />
-    <link rel="stylesheet" type="text/css" href="dep/Font-Awesome/css/font-awesome.css" />
-    <link rel="stylesheet" type="text/css" href="style.css" />
+    <style>
+      @page {
+        size: 8.5in 11in portrait;
+        margin: 0.5in;
+      }
+
+      /* Reset & defaults */
+      * {
+        box-sizing: border-box;
+      }
+      :root {
+        --sf: 1.25; /* sf = scaling factor */
+        --rems-s: calc(var(--rems-m) / var(--sf));
+        --rems-m: 0.75rem;
+        --rems-l: calc(var(--rems-m) * var(--sf));
+        --rems-xl: calc(var(--rems-l) * var(--sf));
+        --rems-2xl: calc(var(--rems-xl) * var(--sf));
+        --rems-3xl: calc(var(--rems-2xl) * var(--sf));
+        --rems-4xl: calc(var(--rems-3xl) * var(--sf));
+
+        font-size: 14px;
+      }
+      body {
+        font-family: "Open Sans", sans-serif;
+        font-weight: 300;
+        line-height: 1.25;
+        width: 7.5in;
+        height: 9.5in;
+        margin: 1in 0.5in 0.5in;
+      }
+      h1,
+      h2,
+      h3,
+      h4,
+      p {
+        font-weight: normal;
+        margin: 0;
+      }
+
+      /* Timeline items */
+      .tl {
+        display: grid;
+        grid-template-columns: 2rem 1fr;
+        column-gap: 0.5rem;
+        row-gap: 0.5rem;
+      }
+      .tl > div:first-child {
+        font-size: 0.9em;
+        display: flex;
+        gap: 0.1rem;
+        justify-content: end;
+        margin-top: -0.1rem;
+      }
+      .tl > div:first-child > div:first-child {
+        flex: auto 1 0;
+        margin-top: 0.375em;
+        text-align: right;
+      }
+      .tl > div:first-child > div:nth-child(2) {
+        flex: auto 0 1;
+        border-right: 1px solid #999;
+        transform: translateX(0.625em);
+      }
+      .tl > div:first-child > div:last-child {
+        color: #999;
+        flex: auto 0 1;
+        font-size: 2em;
+        margin-top: -0.1em;
+      }
+      .tl:not(:last-of-type) > div:last-child > *:last-child {
+        margin-bottom: 2rem;
+      }
+
+      /* Layout > Column  */
+      .column,
+      .row {
+        display: flex;
+        gap: var(--rems-m);
+      }
+      .column {
+        flex-direction: column;
+      }
+      .row {
+        flex-direction: row;
+      }
+      .gap-0 {
+        gap: 0;
+      }
+      .gap-s {
+        gap: var(--rems-s);
+      }
+      .gap-l {
+        gap: var(--rems-l);
+      }
+      .gap-xl {
+        gap: var(--rems-xl);
+      }
+      .gap-2xl {
+        gap: var(--rems-2xl);
+      }
+      .gap-3xl {
+        gap: var(--rems-3xl);
+      }
+      .gap-4xl {
+        gap: var(--rems-4xl);
+      }
+
+      /* Text */
+      .c\:light {
+        color: #666;
+      }
+      .f-s\:l {
+        font-size: 1.1em;
+      }
+      .f-s\:s {
+        font-size: 0.9em;
+      }
+      .f-w\:b {
+        font-weight: bold;
+      }
+      .t-t\:u {
+        text-transform: uppercase;
+      }
+    </style>
   </head>
-  
-  <body lang="en">
 
-    <section id="main">
-      
-      <!-- Title -->
-      <header id="title">
-        <h1>Chirag Medhora</h1>
-        <span class="subtitle">full-stack | engineering manager | user-empathetic | product-oriented</span>
-      </header>
-
-      <!-- Experience -->
-      <section class="main-block">
-
-        <h2>
-          <i class="fa fa-suitcase"></i> Experience
-        </h2>
-        
-        <!-- Experience 1 -->
-        <section class="blocks">
-          <div class="date">
-            <span>today</span><span>2014</span>
-          </div>
-          <div class="decorator">
-          </div>
-          <div class="details">
-            <header>
-              <h3 class="ib">Engineering Manager</h3><i class="fa fa-long-arrow-left pad-hz-xs" aria-hidden="true"></i>
-              <h3 class="ib not-bold">Lead Engineer</h3> <i class="fa fa-long-arrow-left pad-hz-xs" aria-hidden="true"></i>
-              <h3 class="ib not-bold">Senior Engineer</h3>
-
-              <div class="row">
-                <div class="place">
-                    Glassdoor
-                </div>
-                <div class="location">
-                    San Francisco, CA
-                </div>
-              </div>
-            </header>
-            <div>
-              <ul>
-                <li>Leading a team of 6 in building the best job search experience. Responsible for overall architecture of the product, stability, performance and hiring, in addition to day-to-day feature development and bug fixing.</li>
-                <li>Owner of business-critical functionality, like CPC revenue tracking and A/B testing.</li>
-                <li>Built Glassdoor's self-service sales flow from the ground up.</li>
-              </ul>
-              </div>
-          </div>
-        </section>
-
-        <!-- Experience 2 -->
-        <section class="blocks">
-          <div class="date">
-            <span>2014</span><span>2013</span>
-          </div>
-          <div class="decorator">
-          </div>
-          <div class="details">
-            <header>
-              <h3>Senior Software Engineer</h3>
-              <div class="row">
-                <div class="place">
-                    Roblox
-                </div>
-                <div class="location">
-                    San Mateo, CA
-                </div>
-              </div>
-            </header>
-            <div>
-              <ul>
-                <li>Built Roblox's highest trafficked and most monetizing page (roblox.com/games).</li>
-              </ul>
-            </div>
-          </div>
-        </section>
-
-        <!-- Experience 3 -->
-        <section class="blocks">
-          <div class="date">
-            <span>2013</span><span>2009</span>
-          </div>
-          <div class="decorator">
-          </div>
-          <div class="details">
-            <header>
-              <h3 class="ib">R&amp;D Team Lead</h3><i class="fa fa-long-arrow-left pad-hz-xs" aria-hidden="true"></i>
-              <h3 class="ib not-bold">Software Developer</h3>
-              <div class="row">
-                <div class="place">
-                    Epic
-                </div>
-                <div class="location">
-                    Madison, WI
-                </div>
-              </div>
-            </header>
-            <div>
-              <ul>
-                <li>Led a team of 5 in developing safety-critical clinical software for use in cardiology procedures.</li>
-              </ul>
-              </div>
-          </div>
-        </section>
-
-        <!-- Experience 4 -->
-        <section class="blocks">
-          <div class="date">
-            <span>2008</span><span>2007</span>
-          </div>
-          <div class="decorator">
-          </div>
-          <div class="details">
-            <header>
-              <h3 class="ib">Subject Matter Expert</h3>
-              <div class="row">
-                <div class="place">
-                    Amdocs
-                </div>
-                <div class="location">
-                    Pune, India
-                </div>
-              </div>
-            </header>
-            <div>
-              <ul>
-                <li>Migrated TBs of customer data from legacy systems to Amdocs. ETL windows for each customer were 24-hour high-pressure periods where all systems were offline and had to come up clean after the migration.</li>
-              </ul>
-              </div>
-          </div>
-        </section>
-
-      </section>
-
-      <!-- Projects -->
-      <section class="main-block">
-        <h2>
-          <i class="fa fa-folder-open"></i> Selected Projects
-        </h2>
-
-        <section class="blocks">
-          <div class="date">
-            <span>2016</span>
-          </div>
-          <div class="decorator">
-          </div>
-          <div class="details">
-            <header>
-              <h3>SEO boost for job search using non-searchable data</h3>
-              <span class="place">Glassdoor</span>
-            </header>
-            <div>
-              <ul>
-                <li>Leveraged Glassdoor's strengths in UGC and jobs to add salaries, similar companies and similar job titles on the job search results to boost the page's SEO value.</li>
-                <li>Stored this information per job in Redis to enable fast lookups without bloating up the Solr index.</li>
-                <li>Created multithreaded batch jobs to seed the data in Redis, update it when the job changes and delete it when the job expires.</li>
-              </ul>
-            </div>
-          </div>
-        </section>
-
-        <section class="blocks">
-          <div class="date">
-            <span>2013</span>
-          </div>
-          <div class="decorator">
-          </div>
-          <div class="details">
-            <header>
-              <h3>Time-in-range tool for patients undergoing anticoagulation therapy</h3>
-              <span class="place">Epic</span>
-            </header>
-            <div>
-              <ul>
-                <li>A key metric for patients undergoing anticoagulation therapy is the amount of time they spend within their target ranges. Prior to this project, Epic's EHR did not have a tool to calculate this metric, although it is reviewed during every clinical visit.</li>
-                <li>Built a tool to extract clinical information from the hierarchical MUMPS database, feed it to a relational store, and run a tool for each patient with a configurable time range to calculate time-in-range and visually chart their progress.</li>
-              </ul>
-            </div>
-          </div>
-        </section>
-       
-      </section>
-
-      <!-- Education -->
-      <section class="main-block">
-
-        <h2>
-          <i class="fa fa-graduation-cap"></i> Education
-        </h2>
-        
-        <!-- Education 1 -->
-        <section class="blocks">
-          <div class="date">
-            <span>2009</span><span>2008</span>
-          </div>
-          <div class="decorator">
-          </div>
-          <div class="details">
-            <header>
-              <h3>MS in eBusiness Technology</h3>
-              <div class="row">
-                <div class="place">
-                    Carnegie Mellon University, School of Computer Science
-                </div>
-                <div class="location">
-                    Pittsburgh, PA
-                </div>
-              </div>
-            </header>
-            <div>GPA 4.0. Member of the team that won the $10,000 final project competition.</div>
-          </div>
-        </section>
-        
-        <!-- Education 2 -->
-        <section class="blocks">
-          <div class="date">
-            <span>2007</span><span>2003</span>
-          </div>
-          <div class="decorator">
-          </div>
-          <div class="details">
-            <header>
-              <h3>BS in Computer Engineering</h3>
-              <div class="row">
-                <div class="place">
-                    University of Mumbai
-                </div>
-                <div class="location">
-                    Mumbai, India
-                </div>
-              </div>
-            </header>
-            <div>GPA 70%. Chairperson of the college's National Service Scheme.</div>
-          </div>
-        </section>
-
-      </section>
-
-    </section>
-
-    <aside id="sidebar">
-
-      <!-- Contact -->
-      <div class="side-block" id="contact">
-        <h1>
-          Contact Info
-        </h1>
-        <ul>
-          <li><i class="fa fa-envelope marg-rt-sm"></i>chiragmedhora@gmail.com</li>
-          <li><i class="fa fa-phone marg-rt-sm"></i>412.999.7340</li>
-          <li><i class="fa fa-linkedin marg-rt-sm"></i>linkedin.com/in/chiragmedhora</li>
-        </ul>
+  <body>
+    <div class="column gap-4xl">
+      <div class="column gap-l">
+        <h1 class="t-t:u">Chirag Medhora</h1>
+        <p class="f-s:l">
+          I'm an engineering leader with 16 years of tech experience. My
+          strengths are: getting ideas to market in weeks, running growth teams,
+          carefully executing re-orgs, and being a hands-on full-stack engineer.
+        </p>
       </div>
 
-      <!-- Skills -->
-      <div class="side-block" id="skills">
-        <h1>
-          Skills
-        </h1>
+      <div class="column gap-l">
+        <h2 class="t-t:u">Experience</h2>
+        <div class="column gap-0">
+          <div class="tl">
+            <div>
+              <div>4y</div>
+              <div></div>
+              <div>•</div>
+            </div>
+            <div class="column gap-s">
+              <h3><span class="f-w:b">Independent Consultant</span></h3>
+              <p>
+                Software engineering consultant with a few preferred
+                engagements: partnering with non-technical founders to build &
+                launch their ideas, shaping org design within larger engineering
+                teams, consulting with subscriptions-based growth teams.
+              </p>
+              <p>Clients: Abstract, Atheva, Substack, Tangelo, Yem.</p>
+            </div>
+          </div>
+          <div class="tl">
+            <div>
+              <div>4y</div>
+              <div></div>
+              <div>•</div>
+            </div>
+            <div class="column gap-s">
+              <h3>
+                <span class="f-w:b">Quizlet</span
+                ><span class="f-s:s"
+                  >, Sr Eng Manager<span class="c:light">
+                    ← Eng Manager ← Tech Lead</span
+                  >
+                </span>
+              </h3>
 
-        <ul>
-          <li>Software design &amp; development</li>
-          <li>People management</li>
-        </ul>
-
-        <!-- Languages -->
-        <ul>
-          <li>
-            <div class="skill-name">C#</div>
-            <div class="progress-outer">
-              <div class="progress-inner" style="flex-basis: 40%;"></div>  
+              <p>
+                Led 15 engineers across growth, infra, and product teams.
+                Re-org'd the Subscriptions teams to take on larger feature-based
+                growth projects, in addition to rapid A/B testing.
+              </p>
+              <p>
+                X-team, x-functional owner of: eng interview process across
+                roles & levels, service observability, chronic tech debt
+                reduction, monetization check metrics.
+              </p>
             </div>
-          </li>
-          <li>
-            <div class="skill-name">HTML+CSS</div>
-            <div class="progress-outer">
-              <div class="progress-inner" style="flex-basis: 80%;"></div>  
+          </div>
+          <div class="tl">
+            <div>
+              <div>3y</div>
+              <div></div>
+              <div>•</div>
             </div>
-          </li>
-          <li>
-            <div class="skill-name">Java</div>
-            <div class="progress-outer">
-              <div class="progress-inner" style="flex-basis: 90%;"></div>  
+            <div class="column gap-s">
+              <h3>
+                <span class="f-w:b">Glassdoor</span
+                ><span class="f-s:s"
+                  >, Eng Manager<span class="c:light">
+                    ← Tech Lead ← Sr Engineer</span
+                  ></span
+                >
+              </h3>
+              <p>
+                Led 10 engineers across 2 teams. Owned the job search
+                experience, CPC revenue tracking, front-end architecture,
+                migration from monolith to microservices.
+              </p>
+              <p>
+                Built Glassdoor's first monetizing PLG flow: self-serve job
+                postings.
+              </p>
             </div>
-          </li>
-          <li>
-            <div class="skill-name">JavaScript</div>
-            <div class="progress-outer">
-              <div class="progress-inner" style="flex-basis: 80%;"></div>  
+          </div>
+          <div class="tl">
+            <div>
+              <div>1y</div>
+              <div></div>
+              <div>•</div>
             </div>
-          </li>
-          <li>
-            <div class="skill-name">JSP</div>
-            <div class="progress-outer">
-              <div class="progress-inner" style="flex-basis: 70%;"></div>  
+            <div class="column gap-s">
+              <h3>
+                <span class="f-w:b">Roblox</span
+                ><span class="f-s:s">, Sr Engineer</span>
+              </h3>
+              <p>
+                Built Roblox's highest trafficked and most monetizing page
+                (roblox.com/games). Launched the Developer Exchange program,
+                allowing community creators to monetize their games.
+              </p>
             </div>
-          </li>
-          <li>
-            <div class="skill-name">Python</div>
-            <div class="progress-outer">
-              <div class="progress-inner" style="flex-basis: 20%;"></div>  
+          </div>
+          <div class="tl">
+            <div>
+              <div>3.5y</div>
+              <div></div>
+              <div>•</div>
             </div>
-          </li>
-          <li>
-            <div class="skill-name">Ruby</div>
-            <div class="progress-outer">
-              <div class="progress-inner" style="flex-basis: 20%;"></div>  
+            <div class="column gap-s">
+              <h3>
+                <span class="f-w:b">Epic</span
+                ><span class="f-s:s"
+                  >, R&amp;D Team Lead<span class="c:light">
+                    ← Software Engineer</span
+                  ></span
+                >
+              </h3>
+              <p>
+                Led a team of 5 in developing safety-critical clinical software
+                for use in cardiology procedures.
+              </p>
             </div>
-          </li>
-          <li>
-            <div class="skill-name">Shell scripts</div>
-            <div class="progress-outer">
-              <div class="progress-inner" style="flex-basis: 60%;"></div>  
-            </div>
-          </li>
-          <li>
-            <div class="skill-name">SQL</div>
-            <div class="progress-outer">
-              <div class="progress-inner" style="flex-basis: 90%;"></div>  
-            </div>
-          </li>
-        </ul>
-
-        <!-- Libs, frameworks, etc. -->
-        <ul>
-          <!--<li>
-            <div class="skill-name">Django</div>
-            <div class="progress-outer">
-              <div class="progress-inner" style="flex-basis: 10%;"></div>  
-            </div>
-          </li>-->
-          <li>
-            <div class="skill-name">Hibernate</div>
-            <div class="progress-outer">
-              <div class="progress-inner" style="flex-basis: 70%;"></div>  
-            </div>
-          </li>
-          <li>
-            <div class="skill-name">jQuery</div>
-            <div class="progress-outer">
-              <div class="progress-inner" style="flex-basis: 80%;"></div>  
-            </div>
-          </li>
-          <li>
-            <div class="skill-name">Node+Express</div>
-            <div class="progress-outer">
-              <div class="progress-inner" style="flex-basis: 30%;"></div>  
-            </div>
-          </li>
-          <li>
-            <div class="skill-name">Play</div>
-            <div class="progress-outer">
-              <div class="progress-inner" style="flex-basis: 30%;"></div>  
-            </div>
-          </li>
-          <li>
-            <div class="skill-name">Rails</div>
-            <div class="progress-outer">
-              <div class="progress-inner" style="flex-basis: 20%;"></div>  
-            </div>
-          </li>
-          <li>
-            <div class="skill-name">React</div>
-            <div class="progress-outer">
-              <div class="progress-inner" style="flex-basis: 60%;"></div>  
-            </div>
-          </li>
-          <li>
-            <div class="skill-name">Spring</div>
-            <div class="progress-outer">
-              <div class="progress-inner" style="flex-basis: 80%;"></div>  
-            </div>
-          </li>
-          <li>
-            <div class="skill-name">Struts 2</div>
-            <div class="progress-outer">
-              <div class="progress-inner" style="flex-basis: 90%;"></div>  
-            </div>
-          </li>
-        </ul>
-
-        <!-- Storage -->
-        <ul>
-          <li>
-            <div class="skill-name">AWS S3</div>
-            <div class="progress-outer">
-              <div class="progress-inner" style="flex-basis: 40%;"></div>  
-            </div>
-          </li>
-          <li>
-            <div class="skill-name">MySQL</div>
-            <div class="progress-outer">
-              <div class="progress-inner" style="flex-basis: 20%;"></div>  
-            </div>
-          </li>
-          <li>
-            <div class="skill-name">Oracle</div>
-            <div class="progress-outer">
-              <div class="progress-inner" style="flex-basis: 60%;"></div>  
-            </div>
-          </li>
-          <li>
-            <div class="skill-name">Redis</div>
-            <div class="progress-outer">
-              <div class="progress-inner" style="flex-basis: 50%;"></div>  
-            </div>
-          </li>
-          <li>
-            <div class="skill-name">SQL Server</div>
-            <div class="progress-outer">
-              <div class="progress-inner" style="flex-basis: 80%;"></div>  
-            </div>
-          </li>
-        </ul>
-
-        <!-- Build, ops -->
-        <ul>
-          <li>
-            <div class="skill-name">AWS EBeanstalk</div>
-            <div class="progress-outer">
-              <div class="progress-inner" style="flex-basis: 20%;"></div>  
-            </div>
-          </li>
-          <li>
-            <div class="skill-name">Jenkins</div>
-            <div class="progress-outer">
-              <div class="progress-inner" style="flex-basis: 30%;"></div>  
-            </div>
-          </li>
-          <li>
-            <div class="skill-name">Maven</div>
-            <div class="progress-outer">
-              <div class="progress-inner" style="flex-basis: 60%;"></div>  
-            </div>
-          </li>
-          <li>
-            <div class="skill-name">Webpack</div>
-            <div class="progress-outer">
-              <div class="progress-inner" style="flex-basis: 30%;"></div>  
-            </div>
-          </li>
-        </ul>
-
-        <!-- Monitoring -->
-        <ul>
-          <li>
-            <div class="skill-name">AppDynamics</div>
-            <div class="progress-outer">
-              <div class="progress-inner" style="flex-basis: 50%;"></div>  
-            </div>
-          </li>
-          <li>
-            <div class="skill-name">Sumo Logic</div>
-            <div class="progress-outer">
-              <div class="progress-inner" style="flex-basis: 90%;"></div>  
-            </div>
-          </li>
-        </ul>
-
+          </div>
+        </div>
       </div>
 
-    </aside>
+      <div class="column gap-l">
+        <h2 class="t-t:u">Education</h2>
+        <div class="column gap-0">
+          <div class="tl">
+            <div>
+              <div>1y</div>
+              <div></div>
+              <div>•</div>
+            </div>
+            <div class="column gap-s">
+              <h3>
+                <span class="f-w:b">Carnegie Mellon University</span
+                ><span class="f-s:s">, MS in Computer Science</span>
+              </h3>
+              <p>
+                GPA 4.0. Member of the team that won the $10,000 final project
+                competition.
+              </p>
+            </div>
+          </div>
+          <div class="tl">
+            <div>
+              <div>4y</div>
+              <div></div>
+              <div>•</div>
+            </div>
+            <div class="column gap-s">
+              <h3>
+                <span class="f-w:b">University of Mumbai</span
+                ><span class="f-s:s">, BS in Computer Science</span>
+              </h3>
+              <p>
+                GPA 70%. Chairperson of the college's National Service Scheme.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
 
+      <p class="c:light row gap-3xl">
+        <span>chirag.medhora@gmail.com</span>
+        <span>412.999.7340</span>
+        <span>linkedin.com/in/chiragmedhora</span>
+      </p>
+    </div>
   </body>
-  
 </html>
